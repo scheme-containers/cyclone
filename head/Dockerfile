@@ -8,8 +8,8 @@ WORKDIR /build
 RUN git clone https://github.com/justinethier/cyclone.git
 WORKDIR /build/cyclone
 RUN make
-RUN make test
 RUN make install
+RUN make test
 
 FROM debian:sid-slim
 RUN apt-get update && apt-get -y --no-install-recommends install \
