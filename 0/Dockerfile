@@ -15,8 +15,8 @@ RUN sha256sum cyclone-bootstrap.tar.gz && sha256sum -c checksum
 RUN mkdir cyclone && tar -C cyclone --strip-components 1 -xf cyclone-bootstrap.tar.gz
 WORKDIR cyclone
 RUN make
-RUN make install
 RUN make test
+RUN make install
 
 FROM debian:sid-slim
 RUN apt-get update && apt-get -y --no-install-recommends install \
